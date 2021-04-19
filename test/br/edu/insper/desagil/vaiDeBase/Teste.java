@@ -19,20 +19,20 @@ class Teste {
 		video.adiocionaAvalicao(usuario,4);
 		video.adiocionaAvalicao(new Usuario("Gucci"),5);
 		video.adiocionaAvalicao(new Usuario("Basil"),1);
-		assertEquals(0,video.mediaAvaliacoes());
+		assertEquals(0,usuario.totalAvaliacoes());
 	}
 	
 	@Test
 	void test2() {
 		video.adiocionaAvalicao(new Usuario("Basil"),4);
-		assertEquals(4,video.mediaAvaliacoes());
+		assertEquals(4,usuario.totalAvaliacoes());
 	}
 	
 	@Test
 	void test3() {
 		video.adiocionaAvalicao(new Usuario("Gucci"),4);
 		video.adiocionaAvalicao(new Usuario("Basil"),3);
-		assertEquals(4,video.mediaAvaliacoes());
+		assertEquals(4,usuario.totalAvaliacoes());
 	}
 	
 	@Test
@@ -40,7 +40,7 @@ class Teste {
 		video.adiocionaAvalicao(new Usuario("Rimuru"),4);
 		video.adiocionaAvalicao(new Usuario("Gucci"),4);
 		video.adiocionaAvalicao(new Usuario("Basil"),2);
-		assertEquals(3,video.mediaAvaliacoes());
+		assertEquals(3,usuario.totalAvaliacoes());
 	}
 	
 	@Test
