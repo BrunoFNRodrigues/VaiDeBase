@@ -33,15 +33,14 @@ public class Video {
 	}
 	
 	public int mediaAvaliacoes() {
-		int tot = 0;
-		double media = 0.0;
+		double tot = 0.0;
 		for (Usuario nome:avaliacoes.keySet()) {
 			int nota = avaliacoes.get(nome);
 			tot = tot + nota;
 		}
 		if (avaliacoes.size() != 0) {
-			media = tot/avaliacoes.size();
+			tot = tot/avaliacoes.size();;
 		}
-		return (int) Math.round(media);
+		return (int) Math.round(tot);
 	}
 }
