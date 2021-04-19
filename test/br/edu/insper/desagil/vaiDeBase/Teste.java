@@ -11,7 +11,7 @@ class Teste {
 	Usuario usuario = new Usuario("Ademir");;
 	@BeforeEach
 	void setUp() {
-		video = usuario.postaVideo("Análise", new Produto("Puff",50.00));
+		video = usuario.postaVideo(42, new Produto("Puff",50.00));
 
 	}
 	@Test
@@ -19,20 +19,20 @@ class Teste {
 		video.adiocionaAvalicao(usuario,4);
 		video.adiocionaAvalicao(new Usuario("Gucci"),5);
 		video.adiocionaAvalicao(new Usuario("Basil"),1);
-		assertEquals(0,video.mediaAvaliacao());
+		assertEquals(0,video.mediaAvaliacoes());
 	}
 	
 	@Test
 	void test2() {
 		video.adiocionaAvalicao(new Usuario("Basil"),4);
-		assertEquals(4,video.mediaAvaliacao());
+		assertEquals(4,video.mediaAvaliacoes());
 	}
 	
 	@Test
 	void test3() {
 		video.adiocionaAvalicao(new Usuario("Gucci"),4);
 		video.adiocionaAvalicao(new Usuario("Basil"),3);
-		assertEquals(4,video.mediaAvaliacao());
+		assertEquals(4,video.mediaAvaliacoes());
 	}
 	
 	@Test
@@ -40,12 +40,12 @@ class Teste {
 		video.adiocionaAvalicao(new Usuario("Rimuru"),4);
 		video.adiocionaAvalicao(new Usuario("Gucci"),4);
 		video.adiocionaAvalicao(new Usuario("Basil"),2);
-		assertEquals(3,video.mediaAvaliacao());
+		assertEquals(3,video.mediaAvaliacoes());
 	}
 	
 	@Test
 	void test5() {
-		Video video2 = usuario.postaVideo("Análise", new Produto("Puff",50.00));
+		Video video2 = usuario.postaVideo(02, new Produto("Puff",50.00));
 		video.adiocionaAvalicao(new Usuario("Rimuru"),4);
 		video.adiocionaAvalicao(new Usuario("Gucci"),4);
 		video2.adiocionaAvalicao(new Usuario("Basil"),2);
